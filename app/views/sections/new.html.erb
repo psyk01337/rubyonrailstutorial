@@ -1,0 +1,11 @@
+<% @page_title = "New Section" %>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="sections new">
+    <h2>Create Sections</h2>
+<%= form_for(:section, :url => {:action => 'create'}) do |f| %>
+
+  <%= render(:partial => "section_form", :locals => {:f => f}) %>
+       
+     <% end %>
+</div>

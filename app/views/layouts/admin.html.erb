@@ -1,0 +1,33 @@
+<!DOCTYLE html>
+<html>
+  <head>
+    <title>Simple CMS | <%=@page_title || "Admin" %></title>
+    <!--before style-->
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <!--after style-->
+  </head>
+  <body>
+       <div id="header">
+           <h1>Simple CMS Admin</h1>
+       </div>
+       <div id="main">
+       <!--before flash-->
+        <% if !flash[:notice].blank? %>
+            <div class="notice">
+                <%= flash[:notice] %>
+            </div>
+        <% end %>
+       <!--after flash-->
+           <div id="content">
+               <!-- before yield -->
+               <%= yield %>
+               <!-- after yield -->
+           </div>
+       </div>
+       </div>
+       <div id="footer">
+           <p id="copyright">&copy; lynda.com / Kevin Skoglund</p>
+       </div>
+   </body>
+</html>
+        
